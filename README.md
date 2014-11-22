@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/maptastik/os-webmap-workshop.png?label=ready&title=Ready)](https://waffle.io/maptastik/os-webmap-workshop)
 <a name="top"></a>
 #Ohio URISA Open Source Web Mapping Workshop
 ----------
