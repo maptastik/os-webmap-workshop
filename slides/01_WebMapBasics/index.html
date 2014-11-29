@@ -256,11 +256,19 @@ window.onload = function() {
 <div><img src="images/basemap-datalayers-04.png"></div>
 <div><img src="images/basemap-datalayers-05.png"></div>
 <div><img src="images/basemap-datalayers-06.png"></div>
-<div class='imageTextLight'><img src="images/leaflet-toner-snapshot-giant.png"><em>The simplest possible web map:</em> <a href="http://sta.mn/v5h">sta.mn/v5h</a></div>
-<div><img src="images/leaflet_code.png"></div>
+<div class='imageTextLight'><img src="images/leaflet-toner-snapshot-giant-2.png"><em>The simplest possible web map:</em> <a href="http://bit.ly/1B20nhJ">http://bit.ly/1B20nhJ</a></div>
+<div><img src="images/leaflet_code-2.png"></div>
 <div><img src="images/anatomy-of-a-web-map.png"></div>
-<div>What does the javascript library do? Grabs the tiles, adds content layer, handles interaction.</div>
-<div>The javascript: we recommend <a href="http://leafletjs.com">Leaflet</a>, although there are others: <a href="http://openlayers.org">OpenLayers</a> (which is making a comeback) / <a href="http://modestmaps.com">Modest Maps</a> / <a href="http://polymaps.org">Polymaps</a></div>
+<div>What does the javascript library do? <em>Grabs</em> the tiles, <em>adds</em> content layer, <em>handles</em> interaction.</div>
+<div><h3>Open Source Javascript libraries</h3>
+  <ul>
+    <li><a href="http://leafletjs.com">Leaflet</a>(Recommended)</li>
+    <li><a href="https://www.mapbox.com/mapbox.js/api/v2.1.4/">MapboxJS</a> (Built on and extends Leaflet)</li> 
+    <li><a href="http://openlayers.org">OpenLayers</a> (making a comeback!)</li>
+    <li><a href="http://modestmaps.com">Modest Maps</a></li>
+    <li><a href="http://polymaps.org">Polymaps</a></li>
+  </ul>
+</div>
 <div>And don't forget: <a href="https://developers.google.com/maps/documentation/javascript/">Google Maps API</a> / <a href="http://www.microsoft.com/maps/choose-your-bing-maps-API.aspx">Bing Maps API</a> / <a href="http://developer.here.com/web/guest/javascript-apis">Nokia HERE Maps API</a> / <a href="https://developers.arcgis.com/en/javascript/">ESRI ArcGIS API</a></div>
 <div>The simplified story of webmaps, in review:
   <ul>
@@ -270,31 +278,30 @@ window.onload = function() {
   </ul>
 </div>
 <div>3 exceptions to the simplified story!</div>
-<div>Exception #1: Tiles are always rasters <em>EXCEPT</em> when they're not!</div>
-<div class='imageTextLight'><img src="images/vector_tiles.png"><em>vector tiles!</em> What are they? <a href="http://bl.ocks.org/wboykinm/7393674">(unrelated demo)</a></div>
+<div>Exception #1: Tiles are always rasters <em>EXCEPT</em> when they're not</div>
+<div class='imageTextLight'><img src="images/vector_tiles.png"><em>vector tiles!</em> What are they?</div>
 <div><em>Raster:</em> ask for data to fit into tile, don't include geometry, attributes, or metadata for features in baselayer</div>
 <div>It's just an image!</div>
-<div><a href="https://www.mapbox.com/blog/vector-tiles/">vector tiles</a>: featuers stored as vectors and can include geometry, attribute and metadata, still conform to 256X256px grid patter, but featuers can overrun grid boundaries</div>
-<div><em>Vector:</em> already have vector data sliced up in the way that I will make raster tiles</div>
+<div><a href="https://www.mapbox.com/blog/vector-tiles/">vector tiles</a>: features stored as vectors and can include geometry, attribute and metadata, still conform to 256X256px grid pattern, but featuers can overrun grid boundaries</div>
 <div>It's new and a bit complicated, but<a href="https://www.mapbox.com/blog/vector-tiles/">MapBox</a> has integrated them into their webmap services</div>
-<div>(this is kind of a big deal, but is also new...so we'll wait and see on the impact)</div>
 <div>Exception #2: Can’t interact with features on a raster. BUT <a href="https://www.mapbox.com/developers/utfgrid/">UTFGrid</a> (Mapbox invention) makes it possible.</div>
 <div class='imageTextLight' style="color: black"><img src="images/utfgrid.png">UTFGrid is an invisble tile layer made up of arbitrary letters which are indexes into the clickable data</div>
 <div class='imageTextLight' style="color: black"><img src="images/parks-conservancy.png">Stamen used this technique on the <a href="http://www.parksconservancy.org/map/#/?coords=15:37.8016:-122.4659&date=1394668684907">Parks Conservancy map.</a></div>
 <div>Exception #3: <a href="http://d3js.org">D3</a> exists outside the world of tiles</div>
-<div>you can’t easily make road map in D3 <em>BUT</em> can do things that are clumsy in slippy maps like...</div>
+<div>you can’t easily make a road map in D3 <em>BUT</em> can do things that are clumsy in slippy maps like...</div>
 <div class='imageTextLight' style="color: black"><img src="images/d3-examples/d3_choropleth.png">choropleth maps or... <a href="http://sta.mn/jyx">sta.mn/jyx</a></div>
 <div class='imageTextLight' style="color: black"><img src="images/d3-examples/d3_cartogram.png">cartograms or... <a href="http://sta.mn/q99">sta.mn/q99</a></div>
 <div class='imageTextLight' style="color: black"><img src="images/d3-examples/projection_transitions2.png">different map projections (in the browser!) <a href="http://sta.mn/jfs">sta.mn/jfs</a></div>
-
-<div class='imageTextLight' style="color: black"><img src="images/d3-examples/geo.png">D3</div>
-<div class='imageTextLight' style="color: black"><img src="images/d3-examples/racial-divide.png">IS</div>
-<div class='imageTextLight' style="color: black"><img src="images/d3-examples/topojson.png">IN</div>
-<div class='imageTextLight' style="color: black"><img src="images/d3-examples/drought.png">SANE</div>
-
-<div>Find these examples and more in Kai Chang's <a href="http://exposedata.com/talk/d3-geo/">d3.geo presentation</a></div>
-
 <div>Very powerful, but steep learning curve</div>
+<div>
+  <h2>Good intros to D3:</h2>
+    <ul>
+      <li>Kai Chang's <a href="http://exposedata.com/talk/d3-geo/">d3.geo presentation</a>
+      <li><a href="http://bost.ocks.org/mike/" target="_blank">Examples &amp; tutorials from D3 creator Mike Bostock<a></li>
+    </ul>
+</div>
+
+
 
 <div>So.<br>Where do I start?</div>
 
@@ -304,7 +311,7 @@ window.onload = function() {
 
 <div>Yes? Use <a href="https://www.mapbox.com/tilemill/">TileMill</a> or <a href="https://www.mapbox.com/mapbox-studio/">Mapbox Studio</a> to design your own tiles.</div>
 
-<div><img src="images/worldwide-wood.png"> <em>Pretty!</em></div>
+<div><img src="images/worldwide-wood.png"> </div>
 
 <div>Style your map with <a href="https://www.mapbox.com/carto">CartoCSS</a> (or just carto)</div>
 
