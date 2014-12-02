@@ -8,22 +8,77 @@
 <style>
   body { margin:0; padding:0; }
   #map { position:absolute; top:0; bottom:0; width:100%; }
+
+.legend label,
+.legend span {
+  display:block;
+  float:left;
+  height:15px;
+  width:20%;
+  text-align:center;
+  font-size:9px;
+  color:#808080;
+  }
 </style>
 </head>
 <body>
+    
+<!--Legend-->
+<!--We're creating the legend, but the style="display:none;" means we're not going to draw it initially-->
+<div id='legend' style='display:none;'>
+  <strong>Hungarian Ancestry in Lucas County, OH</strong><br />
+    <small>% of population claiming Hungarian ancestry by census tract</small>
+  <nav class='legend clearfix'>
+    <span style='background:rgba(255,255,204,0.5);'></span>
+    <span style='background:rgba(194,230,153,0.5);'></span>
+    <span style='background:rgba(120,198,121,0.5);'></span>
+    <span style='background:rgba(49,163,84,0.5);'></span>
+    <span style='background:rgba(0,104,55,0.5);'></span>
+    <label>0 - 20%</label>
+    <label>40%</label>
+    <label>60%</label>
+    <label>80%</label>
+    <label>100%</label>
+    <small>Source: <a href="http://factfinder2.census.gov" target="_blank">ACS 2012 (5yr)</a></small>
+    </nav>
+</div>
+<!--End legend-->
+
+<!--map div-->
 <div id='map'></div>
+<!--End map div-->
 
+<!--MAGIC!!!!!-->
 <script>
+// Access your Mapbox account
 L.mapbox.accessToken = 'pk.eyJ1IjoibWFwdGFzdGlrIiwiYSI6IjNPMkREV1kifQ.2KGPFZD0QaGfvYzXYotTXQ';
-var map = L.mapbox.map('map','maptastik.toledo_hungarian');     
 
+// Space for the map within the script
+var map = L.mapbox.map('map', undefined, {
+    infoControl: true,
+    attributionControl: false
+});  
+
+// Adds Stamen's toner basemap to map
 var stamenLayer = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
 }).addTo(map);
 
-//var hungarianLayer = L.mapbox.tileLayer('maptastik.toledo_hungarian').addTo(map); 
+// Adds the mbtiles we made of Lucas Co to the map
+var lucasCoLayer = L.mapbox.tileLayer('maptastik.toledo_hungarian').addTo(map);
+
+// Let's bring out the interactivity
+// Adds UTF grid from our Lucas Co tiles to the map
+var myGridLayer = L.mapbox.gridLayer('maptastik.toledo_hungarian').addTo(map); 
+// Creates access to interaction with the UTF grid from our Lucas co tiles
+var myGridControl = L.mapbox.gridControl(myGridLayer).addTo(map);
     
+//Sets our starting location and zoom   
 map.setView([41.56633, -83.63830], 10);
+//Remember earlier when we made the legend, but didn't display it?
+//Now it's getting displayed
+map.legendControl.addLegend(document.getElementById('legend').innerHTML);
+
 </script>
 </body>
 </html>
