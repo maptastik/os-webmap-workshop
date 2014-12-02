@@ -1,48 +1,29 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
-    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
-    <style type="text/css">
-      #mapdiv { height: 100%; }
-    </style>
-  </head>
-  <body>
-    <div id="mapdiv"></div>
+<head>
+<meta charset=utf-8 />
+<title>External map layers</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+<div id='map'></div>
 
-    <script>
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoibWFwdGFzdGlrIiwiYSI6IjNPMkREV1kifQ.2KGPFZD0QaGfvYzXYotTXQ';
+var map = L.mapbox.map('map','maptastik.toledo_hungarian');     
 
-      var geojsonFeature = {
-        "type": "Feature",
-        "properties": {
-            "name": "Fifth Third Field"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-83.53848,41.64860]
-        }
-      };
+var stamenLayer = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+}).addTo(map);
 
-      var mapvar = L.map('mapdiv').setView([41.64860, -83.53848],16);
-
-      var tileLayer = L.tileLayer(
-        'http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.jpg', 
-        {
-          attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under CC BY 3.0. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under CC BY SA.'
-        }
-      );
-
-      mapvar.addLayer(tileLayer);
-
-      var geojsonLayer = L.geoJson(
-        geojsonFeature, 
-        {
-          onEachFeature: function(feature, layer) { layer.bindPopup(feature.properties.name); }
-        }
-      );
-
-      mapvar.addLayer(geojsonLayer);
-
-    </script>
-
-  </body>
+//var hungarianLayer = L.mapbox.tileLayer('maptastik.toledo_hungarian').addTo(map); 
+    
+map.setView([41.56633, -83.63830], 10);
+</script>
+</body>
 </html>
