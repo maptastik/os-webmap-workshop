@@ -210,6 +210,20 @@
           41.64726212881368
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Turtle Island",
+        "type": "Other"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.39115500450134,
+          41.752304899987465
+        ]
+      }
     }
   ]
 }
