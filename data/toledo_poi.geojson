@@ -1,1 +1,215 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Toledo Zoo","type":"Arts & Science"},"geometry":{"type":"Point","coordinates":[-83.5828846693039,41.62155009016468]}},{"type":"Feature","properties":{"name":"Toledo Museum of Art","type":"Arts & Science"},"geometry":{"type":"Point","coordinates":[-83.55969429016113,41.65861337713579]}},{"type":"Feature","properties":{"name":"Imagination Station","type":"Arts & Science"},"geometry":{"type":"Point","coordinates":[-83.53134870529175,41.65215238923469]}},{"type":"Feature","properties":{"name":"Toledo Botanical Garden","type":"Arts & Science"},"geometry":{"type":"Point","coordinates":[-83.67198228836058,41.666051528236046]}},{"type":"Feature","properties":{"name":"Tony Packo's Cafe","type":"Restaurant"},"geometry":{"type":"Point","coordinates":[-83.5022735595703,41.659992064835045]}},{"type":"Feature","properties":{"name":"Huntington Center","type":"Events Venue"},"geometry":{"type":"Point","coordinates":[-83.53684186935425,41.65114230028929]}},{"type":"Feature","properties":{"name":"Stranahan Theater","type":"Arts & Science"},"geometry":{"type":"Point","coordinates":[-83.65260601043701,41.59291519115231]}},{"type":"Feature","properties":{"name":"Valentine Theater","type":"Arts & Science"},"geometry":{"type":"Point","coordinates":[-83.53375196456909,41.65321056066561]}},{"type":"Feature","properties":{"name":"Fifth Third Field","type":"Sports Venue"},"geometry":{"type":"Point","coordinates":[-83.53840827941895,41.64860899167504]}},{"type":"Feature","properties":{"name":"Glass Pavilion","type":"Arts & Science"},"geometry":{"type":"Point","coordinates":[-83.55806887149811,41.65962735671603]}},{"type":"Feature","properties":{"name":"SeaGate Conventions Center","type":"Events Venue"},"geometry":{"type":"Point","coordinates":[-83.5366702079773,41.649458783516515]}},{"type":"Feature","properties":{"name":"Rosary Cathedral","type":"Religious"},"geometry":{"type":"Point","coordinates":[-83.55615377426147,41.67262331740197]}},{"type":"Feature","properties":{"name":"Collingword Arts Center","type":"Arts & Science"},"geometry":{"type":"Point","coordinates":[-83.5558533668518,41.668808555620586]}},{"type":"Feature","properties":{"name":"Glass Bowl","type":"Sports Venue"},"geometry":{"type":"Point","coordinates":[-83.61355304718018,41.657330850452006]}}]}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Toledo Zoo",
+        "type": "Arts & Science"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.5828846693039,
+          41.62155009016468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Toledo Museum of Art",
+        "type": "Arts & Science"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.55969429016113,
+          41.65861337713579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Imagination Station",
+        "type": "Arts & Science"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.53134870529175,
+          41.65215238923469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Toledo Botanical Garden",
+        "type": "Arts & Science"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.67198228836058,
+          41.666051528236046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tony Packo's Cafe",
+        "type": "Restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.5022735595703,
+          41.659992064835045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Huntington Center",
+        "type": "Events Venue"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.53684186935425,
+          41.65114230028929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Stranahan Theater",
+        "type": "Arts & Science"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.65260601043701,
+          41.59291519115231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Valentine Theater",
+        "type": "Arts & Science"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.53375196456909,
+          41.65321056066561
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fifth Third Field",
+        "type": "Sports Venue"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.53840827941895,
+          41.64860899167504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Glass Pavilion",
+        "type": "Arts & Science"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.55806887149811,
+          41.65962735671603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SeaGate Conventions Center",
+        "type": "Events Venue"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.5366702079773,
+          41.649458783516515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rosary Cathedral",
+        "type": "Religious"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.55615377426147,
+          41.67262331740197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Collingword Arts Center",
+        "type": "Arts & Science"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.5558533668518,
+          41.668808555620586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Glass Bowl",
+        "type": "Sports Venue"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.61355304718018,
+          41.657330850452006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Inverness Club",
+        "type": "Sports Venue"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.65020275115967,
+          41.64726212881368
+        ]
+      }
+    }
+  ]
+}
