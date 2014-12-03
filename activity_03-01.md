@@ -5,8 +5,10 @@
 In this activity you'll be using CartoCSS and TileMill to make a choropleth map of the Hungarian descended population in Lucas County Ohio by census tract. Your map will also include a legend and interactivity that informs a visitor to your map about the total and percentage of the Hungarian descended population. At the end you will export your map to mbtiles and upload it to Mapbox.
 
 ###What you will need
-- TileMill
-- Mapbox account (the free plan will be sufficient)
+- [TileMill](https://www.mapbox.com/tilemill/)
+- [Mapbox account](https://www.mapbox.com/signup/) (the free plan will be sufficient)
 - Census tract level data for Lucas County, OH on Hungarian ancestry. (If you cloned the os-webmap-workshop repo you can find i your local copy at **/data/prepared/lucasCo_hungarian_tracts.geojson**. Otherwise, you get it [here](https://raw.githubusercontent.com/maptastik/os-webmap-workshop/gh-pages/data/prepared/lucasCo_hungarian_tracts.geojson))
 
-###
+###Let's make a map!
+1. Open TileMill
+2. ![TileMill Projects](https://maptastik.github.com/os-webmap-workshop/images/tm-projects1.png)
