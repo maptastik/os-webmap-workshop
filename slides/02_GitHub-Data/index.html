@@ -95,6 +95,18 @@
     	background-position: center 1px;
     	background-size:75%;
   	}
+    .osm-1 {
+  		background-image: url(./images/osm-1.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .overpass-turbo {
+  		background-image: url(./images/overpass-turbo.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
 
   	/*Text Style*/
   	body {
@@ -102,9 +114,14 @@
   		letter-spacing: -1px;
 
   	}
+    a {
+        background-color: transparent;
+        color: #34d0e7;
+    }
   	ul, ol {
   		margin-left: 10%;
   		line-height: 100%;
+
 	}
 
 	.black-text {
@@ -247,8 +264,49 @@
 	<div data-bodyclass="fork"></div>
 	<div>Clone repo</div>
 	<div data-bodyclass="clone"></div>
-	<div>Find directory on your computer</div>
-	<div>Examine dataset (parks)</div>
+	<div>Let's look at some data<br /><br /><a href="https://github.com/maptastik/os-webmap-workshop/blob/gh-pages/data/prepared/toledo_poi.geojson" target="_blank">Toledo POIs</a></div>
+	<div>We can edit the POIs...</div>
+	<div>...or make new geoJSON!</div>
+	<div>How?</div>
+	<div><a href="http://geojson.io/" target="_blank">geojson.io</a></div>
+	<div>If you use Chrome, <a href="https://chrome.google.com/webstore/detail/geojsonio/oibjgofbhldcajfamjganpeacipebckp" target="_blank">there's an extension</a> for opening your geoJSON from within GitHub</div>
+	
+	<div>But you probably have tons on non-geoJSON data...</div>
+	<div>What to do?</div>
+	<div><h4>Tools for geoJSONifying your data:</h4>
+	    <ul>
+	        <li><a href="http://ogre.adc4gis.com/" target="_blank">Ogre</a> (web)</li>
+	        <li><a href="http://www.shpescape.com/mix/" target="_blank">Shapescape</a> (web)</li>
+	        <li><a href="https://gdbflee-mweisman.rhcloud.com/" target="_blank">GDB Flee</a> (web)</li>
+	        <li><a href="https://www.qgis.org/en/site/forusers/download.html" target="_blank">QGIS</a> (desktop)</li>
+	        <li><a href="https://github.com/project-open-data/esri2open" target="_blank">esri2open</a> (ArcGIS Toolbox)</li>
+	    </ul>
+	</div>
+	<div>What if you don't have any data?</div>
+	<div>That's OK!</div>
+	<div>Lots of options</div>
+	<div>Public data from data portals/sites</div>
+	<div>
+        <h2>For instance:</h2>
+	    <ul>
+	    <li><a href="http://www.data.gov/" target="_blank">data.gov</a></li>
+	    <li><a href="http://geohio.maps.arcgis.com/home/" target="_blank">OGRIP</a></li>
+	    <li><a href="http://co.lucas.oh.us/index.aspx?NID=1316" target="_blank">Lucas County GIS</a></li>
+	    </ul>
+	</div>
+	<div>Collect your own!</div>
+	<div>
+	    <h2>For instance</h2>
+        <ul>
+            <li><a href="http://fulcrumapp.com/" target="_blank">Fulcrum</a></li>
+            <li><a href="http://www.epicollect.net/" target="_blank">EpiCollect</a></li>
+            <li><a href="https://import.io/" target="_blank">import.io</a></li>
+        </ul>
+    </div>
+    <div>Go to the crowd</div>
+    <div data-bodyclass="osm-1"></div>
+    <div>Easy access to OSM data set via <a href="http://overpass-turbo.eu/" target="_blank">Overpass Turbo</a></div>
+    <div data-bodyclass="overpass-turbo"></div>
 
 </body>
 </html>
