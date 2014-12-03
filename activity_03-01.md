@@ -18,3 +18,7 @@ In this activity you'll be using CartoCSS and TileMill to make a choropleth map 
 6. Go ahead and just delete the default CartoCSS:<br/>`Map {
   background-color: #b8dee6;
 }`
+7. You should see a gridded background. That means you have no actual background anymore. That's good! It will allow us to eventually add our map on top of other maps.
+8. Let's add our data. In the bottom-left corner of your window you should see a vertical stack of four buttons. Each one opens up a lot of TileMill's functionality, but we're most concerned with getting our data into TileMill. As such, click the bottom-most button.<br /><img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map2.png" width=100% />
+9. This will open up a little *Layers* window. Since we haven't added anything to our project, there aren't any layers shown. Let's change that! Click **+ Add Layer** <br /><img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map3.png" width=100% />
+10. You should see the *Add Layer* window. Fill in the **ID** field with a short name for the layer. You can name it whatever you want, but it's helpful to name your layer something that describes what it is. (I opted for *tracts*). Select lucasCo_hungarian_tracts.geojson dataset wherever you have it saved. Leave everything else as it is and click **Save &amp; Style**<br /><img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map3.png" width=50% />
