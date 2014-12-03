@@ -224,6 +224,20 @@
           41.752304899987465
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Goodwill",
+        "type": "Shopping"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.53222846984863,
+          41.656352906693606
+        ]
+      }
     }
   ]
 }
