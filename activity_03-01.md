@@ -1,17 +1,17 @@
-#Part 3, Activity 1
-##Make an interactive choropleth map
+# Part 3, Activity 1
+## Make an interactive choropleth map
 
-###Introduction
+### Introduction
 In this activity you'll be using CartoCSS and TileMill to make a choropleth map of the Hungarian descended population in Lucas County Ohio by census tract. Your map will also include a legend and interactivity that informs a visitor to your map about the total and percentage of the Hungarian descended population. At the end you will export your map to mbtiles and upload it to Mapbox.
 
-###What you will need
+### What you will need
 - [TileMill](https://www.mapbox.com/tilemill/)
 - [Mapbox account](https://www.mapbox.com/signup/) (the free plan will be sufficient)
 - Census tract level data for Lucas County, OH on Hungarian ancestry. (If you cloned the os-webmap-workshop repo you can find i your local copy at `/data/prepared/lucasCo_hungarian_tracts.geojson`. Otherwise, you get it [here](https://raw.githubusercontent.com/maptastik/os-webmap-workshop/gh-pages/data/prepared/lucasCo_hungarian_tracts.geojson))
 
-###Let's make a map!
+### Let's make a map!
 
-####Getting started
+#### Getting started
 
 Open TileMill
 
@@ -25,7 +25,7 @@ When you're finished, click **Add**.
 
 In the *Projects* window, select the project you just made.
 
-####Setting up your workspace
+#### Setting up your workspace
 
 TileMill will open up your project. It has, by default, added a light blue background to your project. That's no layer of data! It's just a style for the space you'll be putting your data into.
 
@@ -44,7 +44,7 @@ Click **Save**.
 
 You should see a gridded background. That means you have no actual background anymore. That's good! It will allow us to eventually add our map on top of other maps.
 
-####Adding data
+#### Adding data
 
 In the bottom-left corner of your window you should see a vertical stack of four buttons. Each one opens up a lot of TileMill's functionality, but we're most concerned with getting some data into TileMill. As such, click the bottom-most button.
 
@@ -64,7 +64,7 @@ Alright! You've loaded in your data. You'll see some default cartoCSS for our tr
 
 <img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map5.png" width=100% />
 
-####Examining the data
+#### Examining the data
 
 Let's take a look at the data. What are we going to map? In the *Layers* window, to the right of `#tracts` is a table icon. Click it and you should see the attribute table of the tracts data. We've got two attribute fields that were joined from ACS Census data. 
 
@@ -72,7 +72,7 @@ Let's take a look at the data. What are we going to map? In the *Layers* window,
 
 - `p_hung` is the percentage of the population in the tract that claims Hungarian ancestry. 
 
-####Some simple styling
+#### Some simple styling
 
 Because we're making a choropleth map, it's best to use normalized data. We'll be working with the `p_hung` field for this map.
 
@@ -105,11 +105,11 @@ If all is correct, you should have a map of census tracts in Lucas County, OH wi
 
 Not too shabby! Way better than clicking through tons of dialog boxes. But this is a pretty boring map. Let's map those Hungarians!
 
-####Styling based on data
+#### Styling based on data
 With CartoCSS we can assign styles to features that meet certain criteria. This is called *conditional formatting*. In this case we're going to apply conditional formatting to the fill of the tracts based on the `p_hung` field values.
 
 We're going to need to classify our `p_hung` field to create our choropleth map. TileMill is not a GIS and thus does not generate classification schemes based on your data. You'll have to do that in QGIS, ArcGIS, or by some other means. For the sake of this activity, I've created a classification scheme you can use.
-#######Classification Scheme
+####### Classification Scheme
 
 `Class 1: <1`
 <br>
@@ -127,7 +127,7 @@ We're almost ready to apply this classification scheme to the map. But first, it
 
 Also, make sure to switch from HEX to and RGB colorspace. TileMill can handle both, but it handles transparency better with RGB.
 
-######Color Scheme
+###### Color Scheme
 
 `Class 1: 255,255,204`
 <br>
@@ -175,7 +175,7 @@ If all went as planned and there are no errors, you should see a choropleth map 
 
 <img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map9.png" width=100% />
 
-####Adding transparency
+#### Adding transparency
 
 This is a pretty nice looking choropleth map, but there's no figure to ground relationship or geographic context surrounding Lucas County. We could add additional state and county layers to create that context, but we can also place this choropleth map on top of a basemap. Although adding transparency to choropleth maps is a big no-no, in our next activity we'll be placing this map over a basemap well-suited for such a cartographic deviance.
 
@@ -198,3 +198,5 @@ Your polygon fill formatting should look something like this:
 Click **Save**
 
 <img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map10.png" width=100% />
+
+#### Adding Interactivity
