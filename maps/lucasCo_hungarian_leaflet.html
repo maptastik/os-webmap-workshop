@@ -4,7 +4,9 @@
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <!--[if lte IE 8]>
      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" />
-  <![endif]-->
+  <![endif]--> 
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <style type="text/css">
     body {
       padding: 0;
@@ -40,14 +42,14 @@
     }
 
   </style>
-  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
   <div id='map'></div>
-  <script>
-      var map = L.map('map').setView([41.56633, -83.63830], 10);
-      var geojson;
+<script>
+    var map = L.map('map').setView([41.56633, -83.63830], 10);
+    
+    //creates geojson variable 
+    var geojson;
 
 // Function for the tooltip box      
     var info = L.control();
@@ -141,6 +143,7 @@
 var stamenLayer = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
 }).addTo(map);
+      
 //Add geojson
 $.getJSON("../data/prepared/lucasCo_hungarian_tracts.geojson", function(data) {
     geojson = L.geoJson(data, {
