@@ -294,3 +294,32 @@ You have completed styling the map in TileMill!
 
 <img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map12.png" width=100% />
 
+#### Exporting to Mapbox
+
+It might be fun to look at our map in TileMill, but we really want to share it on the web. We need to export our map as mbtiles and up to Mapbox so our map can be accessed online
+
+Click **Export** in the top-right corner. This will drop down a list of export options. Click `Upload`. You'll see that of the screen is grayed out. Zoom into Lucas County at `Zoom 9`. Use click+shift to drag a rectangle tight around Lucas County. 
+
+Next head over to the form pane to the right. Fill in the `Name`. Close the Zoom sliders to 9 on the left and 15 on the right (we will only export mbtiles at zoom levels 9-15). For `Center` use `-83.6383,41.5663,9`. Leave everything else the same and click **Upload**.
+
+<img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map13.png" width=100% />
+
+#### View online
+
+To view your map online go to [Mapbox.com]() and sign in if you haven't already. Click **Data**.
+
+<img src="https://maptastik.github.com/os-webmap-workshop/images/mb-web1.png" width=100% />
+
+Click your map. This will drop down several bits of information about your map as well as options for you to access your map. Click **Preview**.
+
+<img src="https://maptastik.github.com/os-webmap-workshop/images/mb-web2.png" width=100% />
+
+There's your map on the web! If you want, you can share it or embed it on your website, blog, or social media. Just click the share button in the bottom-left corner. This will bring up several sharing options for your map.
+
+<img src="https://maptastik.github.com/os-webmap-workshop/images/mb-web3.png" width=100% />
+
+TaDa! You've made a web map using CartoCSS and TileMill. Pat yourself on the back. You've earned it.
+
+#### What next?
+
+What if we added some figure-ground relations to this map so that we can see our census tracts in a geographic context? Let's do that!
