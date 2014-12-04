@@ -1,0 +1,82 @@
+<!--1. HTML Skeleton-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>mbtiles on baselayer</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />    
+</head>
+
+<body>
+    
+</body>
+</html>
+
+
+<!--2. Add leaflet.js & leaflet.css to top of head-->
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <!--[if lte IE 8]>
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" />
+  <![endif]--> 
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  
+
+<!--3. Create map div at top of body-->
+
+<div id='map'></div>
+
+
+<!--4. Basic style for body and map div. Add in head under leaflet.js-->
+
+<style type="text/css">
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    html, body, #map {
+      height: 100%;
+    }
+</style>
+
+
+<!--5. Initialize map inside script tags...immediately under map div-->
+<script>
+    // Initializes the map at the noted coordinates and zoom
+    var map = L.map('map').setView([41.56633, -83.63830], 10);
+</script>
+
+
+<!--6. Add toner base layer map initialization-->
+<script> // <- Don't add
+//Add base layer
+var stamenLayer = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+}).addTo(map);
+</script> <!-- <- Don't add-->
+
+
+<!--7. Create geojson variable under map initialization-->
+
+<script> // <- Don't add
+var geojson;
+</script> <!-- <- Don't add-->
+<!--Why? From choropleth example: "The handy geojson.resetStyle method will reset the layer style to its default state (defined by our style function). For this to work, make sure our GeoJSON layer is accessible through the geojson variable by defining it before our listeners and assigning the layer to it later" http://leafletjs.com/examples/choropleth.html-->
+
+
+<!--8. Add jQuery in head below leaflet.js-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<!--9. Add geojson from external source, but same domain-->
+<script> // <- Don't add
+//Add geojson
+$.getJSON("../data/prepared/lucasCo_hungarian_tracts.geojson", function(data) {
+    geojson = L.geoJson(data, {
+    //leave this space open,
+    //also this one
+}).addTo(map);
+</script> <!-- <- Don't add-->
+
+<!--10. Add color stepzzzzzz-->
