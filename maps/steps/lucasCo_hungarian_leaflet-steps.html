@@ -74,9 +74,169 @@ var geojson;
 //Add geojson
 $.getJSON("../data/prepared/lucasCo_hungarian_tracts.geojson", function(data) {
     geojson = L.geoJson(data, {
-    //leave this space open,
-    //also this one
+    //style call will go here,
+    //feature interaction call will go here
 }).addTo(map);
 </script> <!-- <- Don't add-->
 
-<!--10. Add color stepzzzzzz-->
+
+<!--10. Define color scheme and add it to a general styling function. Place under the creation of the geojson variable-->
+
+<script> // <- Don't add
+//Define classification scheme and colors
+function getColor(d) {
+    return d >= 10  ? '#006837' :
+    d >= 7   ? '#31a354' :
+    d >= 4   ? '#78c679' :
+    d >= 1   ? '#c2e699' :
+              '#ffffcc';
+}
+
+//Style the polygons  
+    function style(feature) {
+        return {
+        fillColor: getColor(feature.properties.p_hung),
+        weight: 1,
+        opacity: 1,
+        color: '#000',
+        fillOpacity: 0.5
+        };
+    }
+</script> <!-- <- Don't add-->
+
+
+<!--11. Add styling to our geojson layer. This goes in the commented out section of geojson=L.geoJSON...addTo(map); Your updated call for the external geojson should look like this:-->
+
+<script> // <- Don't add
+//Add geojson
+$.getJSON("../data/prepared/lucasCo_hungarian_tracts.geojson", function(data) {
+    geojson = L.geoJson(data, {
+    style: style //<- This is the new line in your geojson variable
+    //feature interaction call will go here
+}).addTo(map);
+</script> <!-- <- Don't add-->
+
+
+<!--12. Add mouse interaction. This will highlight the feature your mouse is in and zoom to the feature you click. This goes underneath the style function-->
+<script> // <- Don't add    
+    //Changes style property for feature when your mouse touches it
+    function highlightFeature(e) {
+        var layer = e.target;
+
+        layer.setStyle({
+            weight: 3,
+            color: '#fff',
+            fillOpacity: 0.5
+        });
+        
+        if (!L.Browser.ie && !L.Browser.opera) {
+        layer.bringToFront();
+        }
+        
+        // we'll add something here eventually
+    }
+    
+    // Resets the style of the highlighted feature after your mouse leaves
+    function resetHighlight(e) {
+        geojson.resetStyle(e.target);
+        // we'll add something here eventually. 
+    }
+    
+    // Zooms to the feature you click
+    function zoomToFeature(e) {
+        map.fitBounds(e.target.getBounds());
+    }
+    
+    // This pulls the previous 3 functions together. It says "For each particular interaction (mouseover, mouseout, and click, with a feature (a census tract) in a layer (our Lucas Co. census tract geojson), carry out these functions (highlightFeature, resetHighlight, and zoomToFeature)
+    function onEachFeature(feature, layer) {
+        layer.on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlight,
+            click: zoomToFeature
+        });
+    }
+</script> <!-- <- Don't add-->
+
+
+<!--13. Associate interaction of onEachFeature function to our geojson. Add one line to our call for the external geojson to complete defining the interaction-->
+<script> // <- Don't add
+$.getJSON("../data/prepared/lucasCo_hungarian_tracts.geojson", function(data) {
+    geojson = L.geoJson(data, {
+    style: style, // Make sure to add a comma
+    onEachFeature: onEachFeature //<- This is the new line in your geojson variable
+}).addTo(map);
+</script> <!-- <- Don't add-->
+
+
+<!--14. Create function for generating custom info window with information about a selected tract. Put this right under where we created var geojson-->
+
+<script> // <- Don't add
+// Function for the tooltip box      
+    var info = L.control();
+
+    info.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+        this.update();
+        return this._div;
+    };
+
+    // method that we will use to update the control based on feature properties passed
+    info.update = function (props) {
+        this._div.innerHTML = '<h4>&#37 of Population Claiming Hungarian Ancestry</h4>' +  (props ?
+        '<b>' + props.t_hung + '</b> people claiming Hungarian ancestry.<br />That is ' + '<b>' + props.p_hung + '&#37;</b>' + ' of the population of Lucas Co. <b>Census Tract ' + props.NAME + '</b>.'
+        : 'Hover over a state');
+    };
+</script> <!-- <- Don't add-->
+
+
+<!--15. We need to associate info with geojson so the we can display a feature's data on on mousein and reset on mouse out. We need to update the highlightFeature and resetHighlight function-->
+
+<script> // <- Don't add
+function highlightFeature(e) {
+        var layer = e.target;
+
+        layer.setStyle({
+            weight: 3,
+            color: '#fff',
+            fillOpacity: 0.5
+        });
+        
+        if (!L.Browser.ie && !L.Browser.opera) {
+        layer.bringToFront(); // <- Add this
+        }
+        
+        info.update(layer.feature.properties);
+    }
+      
+    function resetHighlight(e) {
+        geojson.resetStyle(e.target);
+        info.update(); // <- Add this
+    }
+</script> <!-- <- Don't add-->
+
+<!--16. Create styling for the info box. Add this between the <style> tags in the head beneath your css for html, body, and #map-->
+
+<style> /* <- Don't add 
+.info {
+        padding: 6px 8px;
+        font: 14px/16px 'Open Sans', Helvetica, sans-serif;
+        background: white;
+        background: rgba(255,255,255,0.98);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        border-radius: 0px;
+    }
+        .info h4 {
+        margin: 0 0 5px;
+        color: #000;
+    }
+</style> <!-- <- Don't add-->
+
+
+<!--17. Add info window to the map. Add at the bottom of the <script> tag-->
+
+<script> // <- Don't add
+//Add custom tool tip
+info.addTo(map);
+</script> <!-- <- Don't add-->
+
+<!--Legend and we're done!-->
