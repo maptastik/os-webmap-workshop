@@ -205,11 +205,11 @@ TileMill allows you to add some limited interactivity to you map. Primarily this
 
 On the vertical stack of buttons in the bottom-left corner, click the pointing hand. This will open up the *Templates* window. Here you have options to add a legend, hover teaser, click function, and link to external resources. Go ahead and click **Teaser**.
 
-<img src="https://maptastik.github.com/os-webmap-workshop/images/tm-tease1.png" width=100% />
+<img src="https://maptastik.github.com/os-webmap-workshop/images/tp-tease1.png" width=100% />
 
 There is a dropdown menu currently set at `--disabled--`. This dropdown lets us determine what layer we're going to call on for interaction. Select `tracts`. You'll see the gray are abelow filled with the various attributes of from our tracts data surrounded by triple curly braces (Mustache tags). 
 
-<img src="https://maptastik.github.com/os-webmap-workshop/images/tm-tease1.png" width=100% />
+<img src="https://maptastik.github.com/os-webmap-workshop/images/tp-tease1.png" width=100% />
 
 In the content area above we can combine plain text or HTML with our mustachioed attributes. Let's use `{{{p_hung}}}`, `{{{t_hung}}}`, and `{{{NAME}}}` along with some HTML:
 
@@ -292,5 +292,5 @@ Click **Save**.
 
 You have completed styling the map in TileMill!
 
-<img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map10.png" width=100% />
+<img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map12.png" width=100% />
 
