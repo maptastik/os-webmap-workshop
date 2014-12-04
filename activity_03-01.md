@@ -306,7 +306,7 @@ Next head over to the form pane to the right. Fill in the `Name`. Close the Zoom
 
 #### View online
 
-To view your map online go to [Mapbox.com]() and sign in if you haven't already. Click **Data**.
+To view your map online go to [Mapbox.com](https://www.mapbox.com/) and sign in if you haven't already. Click **Data**.
 
 <img src="https://maptastik.github.com/os-webmap-workshop/images/mb-web1.png" width=100% />
 
