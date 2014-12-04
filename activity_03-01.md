@@ -200,3 +200,97 @@ Click **Save**
 <img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map10.png" width=100% />
 
 #### Adding Interactivity
+
+TileMill allows you to add some limited interactivity to you map. Primarily this means you can create info windows with additional information pulled form your data. For our map, we'll add an info window that tells the user the total and percentage of the population that is Hungarian descended as well as the census tract number.
+
+On the vertical stack of buttons in the bottom-left corner, click the pointing hand. This will open up the *Templates* window. Here you have options to add a legend, hover teaser, click function, and link to external resources. Go ahead and click **Teaser**.
+
+<img src="https://maptastik.github.com/os-webmap-workshop/images/tm-tease1.png" width=100% />
+
+There is a dropdown menu currently set at `--disabled--`. This dropdown lets us determine what layer we're going to call on for interaction. Select `tracts`. You'll see the gray are abelow filled with the various attributes of from our tracts data surrounded by triple curly braces (Mustache tags). 
+
+<img src="https://maptastik.github.com/os-webmap-workshop/images/tm-tease1.png" width=100% />
+
+In the content area above we can combine plain text or HTML with our mustachioed attributes. Let's use `{{{p_hung}}}`, `{{{t_hung}}}`, and `{{{NAME}}}` along with some HTML:
+
+`There are <strong>{{{t_hung}}}</strong> residents (<strong>{{{p_hung}}}%</strong> of population) in tract <strong>{{{NAME}}}</strong> of Lucas County claiming Hungarian ancestry.`
+
+Click on the **Full** button and the same text to that content area. By adding this text in both **Teaser** and **Full** we can see our info window text when we hover or click a feature.
+
+Click **Save**.
+
+<img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map11.png" width=100% />
+
+#### Add legend
+
+You can create a legend using HTML. Open up the *Templates* window and select **Legend** and add the following HTML:
+
+
+`<div class='my-legend'>`
+
+`<div class='legend-title'>Hungarian Ancestry in Lucas County, OH (by census tract)</div>`
+
+`<div class='legend-scale'>`
+<br>
+`<!--You can adjust background:rgba(...) and the values between </span> &amp; </li> to reflect your color and classification schemes-->`
+<br>
+`<ul class='legend-labels'>`
+<br>&nbsp;&nbsp;&nbsp;&nbsp;`<li><span style='background:rgba(255,255,204,0.5);'></span><1%</li>`
+<br>&nbsp;&nbsp;&nbsp;&nbsp;`<li><span style='background:rgba(194,230,153,0.5);'></span>1% - 3.9%</li>`
+<br>&nbsp;&nbsp;&nbsp;&nbsp;`<li><span style='background:rgba(120,198,121,0.5);'></span>4% - 6.9%</li>`
+<br>&nbsp;&nbsp;&nbsp;&nbsp;`<li><span style='background:rgba(49,163,84,0.5);'></span>7% - 9.9%</li>`
+<br>&nbsp;&nbsp;&nbsp;&nbsp;`<li><span style='background:rgba(0,104,55,0.5);'></span>>= 10%</li>`
+ <br>`</ul>`
+<br>`</div>`
+<br>
+`<!--You can change the text between the various tags to reflect and link to your data source-->`
+<br>`<div class='legend-source'>Source: <a href="#link to source">ACS 2012 5yr</a></div>`
+<br>`</div>`
+<br>
+<br>
+`<!--This the general styling info for your legend. You can change any of this to suit your needs-->`
+<br>
+`<style type='text/css'>`
+<br>&nbsp;&nbsp;&nbsp;&nbsp;`.my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 90%;
+    }`
+<br>&nbsp;&nbsp;&nbsp;&nbsp;`.my-legend .legend-scale ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }`
+<br>&nbsp;&nbsp;&nbsp;&nbsp;`.my-legend .legend-scale ul li {
+    display: block;
+    float: left;
+    width: 50px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 80%;
+    list-style: none;
+    }`
+<br>&nbsp;&nbsp;&nbsp;&nbsp;`.my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 50px;
+    }`
+<br>&nbsp;&nbsp;&nbsp;&nbsp;`.my-legend .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }`
+<br>&nbsp;&nbsp;&nbsp;&nbsp;`.my-legend a {
+    color: #777;
+    }`
+<br>`</style>`
+
+Click **Save**.
+
+You have completed styling the map in TileMill!
+
+<img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map10.png" width=100% />
+
