@@ -239,4 +239,50 @@ function highlightFeature(e) {
 info.addTo(map);
 </script> <!-- <- Don't add-->
 
-<!--Legend and we're done!-->
+<!--18. Create legend using the colors in our style. The JS also creates a div and adds content to it. Put this in the <script> tags underneath where we created our info box-->
+
+<script> // <- Don't add
+// Legend settings
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+  var div = L.DomUtil.create('div', 'info legend'), //creates div and classes 'info' and 'legend'
+      grades = [0, 1, 4, 7, 10], //class breaks
+      labels = [];
+
+  // loop through our density intervals and generate a label with a colored square for each interval
+  for (var i = 0; i < grades.length; i++) {
+      div.innerHTML +=
+'<i style="background:' + getColor(grades[i]) + '"></i> ' +
+grades[i] + (grades[i + 1] ? '&ndash;' + (grades[i + 1]-0.1) + '<br>' : '+');
+  }
+
+  return div;
+};
+</script> <!-- <- Don't add-->
+
+
+<!--19. Style the legend. Add this to the bottom of your <style> tag in the head-->
+
+<style> /* <- Don't add */
+        .legend {
+        line-height: 18px;
+        color: #555;
+    }
+        .legend i {
+        width: 36px;
+        height: 18px;
+        float: left;
+        margin-right: 8px;
+        opacity: 0.5;
+    }
+</style> <!-- <- Don't add -->
+
+
+<!--20. Add legend to map. Put this at the end of your <script> tag, but before the final });-->
+
+<script> // <- Don't add
+// Add legend to map
+legend.addTo(map);
+</script> <!-- <- Don't add-->
