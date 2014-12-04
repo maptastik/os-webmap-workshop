@@ -209,7 +209,7 @@ On the vertical stack of buttons in the bottom-left corner, click the pointing h
 
 There is a dropdown menu currently set at `--disabled--`. This dropdown lets us determine what layer we're going to call on for interaction. Select `tracts`. You'll see the gray are abelow filled with the various attributes of from our tracts data surrounded by triple curly braces (Mustache tags). 
 
-<img src="https://maptastik.github.com/os-webmap-workshop/images/tp-tease1.png" width=100% />
+<img src="https://maptastik.github.com/os-webmap-workshop/images/tp-tease2.png" width=100% />
 
 In the content area above we can combine plain text or HTML with our mustachioed attributes. Let's use `{{{p_hung}}}`, `{{{t_hung}}}`, and `{{{NAME}}}` along with some HTML:
 
