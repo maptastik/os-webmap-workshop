@@ -108,18 +108,19 @@ window.onload = function() {
 <div>Part 1:<br /><em>Web Map Basics</em></div>
 <div>With help from <a href="http://stamen.com/studio/alan">Alan McConchie</a>, <a href="http://stamen.com/studio/beth">Beth Schechter</a>, &amp; <a href="http://lyzidiamond.com/">Lyzi Diamond</a></div>
 <!--TODO: Get new shortlink -->
-<div>Housekeeping!<br>You can follow along here: <a href="" target="_blank">[Link goes here]</a>. Links are in blue boxes, <em>green</em> is just emphasis.</div>
+<div>Housekeeping!<br>You can follow along here: <a href="http://bit.ly/1FRYeTQ" target="_blank">http://bit.ly/1FRYeTQ</a>. Links are in <a href="#">blue boxes</a>, <em>green</em> is just emphasis.</div>
 <div> <em>The basic principles</em> of web mapping</div>
+<div>Like...</div>
 <div>History of webmaps</div>
 <div>Main components</div>
 <div>Exceptions to the norm</div>
 <div>Why?</div>
-<div>Goals
-<ul>
-<li>Understand the origins of the current web mapping paradigm</li>
-<li>Be able to identify the different basic components of web maps and how they work together</li>
-<li>Become more cognizant of the variety of ways maps can be produced for the web</li>
-</ul>
+<div>
+    <ul>
+        <li>Understand the origins of the current web mapping paradigm</li>
+        <li>Be able to identify the different basic components of web maps and how they work together</li>
+        <li>Become more cognizant of the variety of ways maps can be produced for the web</li>
+    </ul>
 </div>
 </section>
 <!--End intro section-->
@@ -132,9 +133,9 @@ window.onload = function() {
 <div><em>Digital</em>: involves a computer, but might not be accessible by the internet.</div>
 <div>Both are obviously quite different from <em>analog</em> maps, such as paper maps and atlases</div>
 <div>Web maps are typically:</div>
-<div>Viewed in your browser</div>
-<div>Accessed through internet</div>
-<div>Interactive
+<div>Viewed in your <em>browser</em></div>
+<div>Accessed via the <em>internet</em></div>
+<div><em>Interactive</em>
   <ul>
     <li>pan</li>
     <li>click</li>
@@ -143,12 +144,12 @@ window.onload = function() {
     <li>...</li>
   </ul>
 </div>
+<div>Examples:</div>
 <div><img src="images/google-map.png"><a href="https://www.google.com/maps/preview">maps.google.com</a></div>
 <div><img src="images/agol-1.png"><a href="http://www.arcgis.com/">ArcGIS<span style="color: #2980b9;">_</span>Online</a></div>
 <div><img src="images/osm.png"><a href="http://www.openstreetmap.org/">OpenStreetMap.org</a></div>
 <div><img src="images/mapsdotstamen.png"><a href="http://maps.stamen.com">maps.stamen.com</a></div>
-<div class='imageTextLight'><img src="images/iphone_maps.jpg">Making maps for <em>mobile devices</em> can be similar, but we're not talking about that today.</div> 
-<div class='imageTextLight'><img src="images/google-earth.png">We're also not talking about <em>digital globes</em> like <a href="http://www.google.com/earth/">Google Earth</a></div>
+
 <div>History:<br><em>How did web maps come to be?</em></div>
 <div  class='imageTextLight' style="color: black"><img src="images/3-map-history/1-arcGIS.jpg">First, there were digital maps like <a href="http://www.esri.com/software/arcgis">ArcGIS</a>.</div>
 <div>GIS for web &rarr; Bad UX</div>
@@ -168,15 +169,16 @@ window.onload = function() {
 <div>No!</div>
 <div>2 big game changers
   <ul>
-    <li>tiles</li>
+    <li>Tiles</li>
     <li>GoogleMaps API access</li>
   </ul>
 </div>
 <div><p>Tiles</p><img src="images/tiles.gif"></div>
+<div>All tiles<br>=<br>same size! 256x256 pixels<br>same boundaries<img src="images/tiles.gif"></div>
 <div><a href="http://paulrademacher.com/" target="_blank">Paul Rademacher</a> reverse engineered GoogleMaps</div>
 <div>Created first web map mashup using house listings from Craigslist and hacked GoogleMaps</div>
 <div><img src="images/housingmaps2-small.png"></div>
-<div>Google's response: This is cool. Everyone should be able to do this! Let's open up the GoogleMaps API!</div>
+<div>Google's response: "This is cool. Everyone should be able to do this! Let's open up the GoogleMaps API!"</div>
 <div>And they did</div>
 </section>
 <!--End background section-->
@@ -212,6 +214,8 @@ window.onload = function() {
 <div class='imageTextLight'><img src="images/tiles/zoom1.png"><em>Zoom level 1: 4 tiles for the world.</em></div>
 <div class='imageTextLight'><img src="images/tiles/zoom2-3-4-5.png"><em>Zoom level 2, 3, 4, 5</em></div>
 <div class='imageTextLight'><img src="images/tiles/zoom13.png"><em>Zoom level 13</em></div>
+<div>Zoom level 15 = ~1.1 billion tiles</div>
+<div>Zoom level 17 = ~17 billion tiles!</div>
 <div>Tiles are <em>rendered</em> in advance (usually) then stored in a cache</div>
 <div>Map tiles are just images on the web, so you can link to them individually.</div>
 <div>For example: <a href="http://tile.openstreetmap.org/8/68/95.png">http://tile.openstreetmap.org/4/2/6.png</a></div>
@@ -241,7 +245,7 @@ window.onload = function() {
 <div>This also means all slippy maps are based on a variant of the <em>Mercator projection</em>.</div>
 <div><em>Mercator projection</em> was designed for sailors BUT it works well for flat maps.</div>
 <div><a href="http://commons.wikimedia.org/wiki/File:1855_Colton_Map_of_the_World_on_Mercator_Projection_-_Geographicus_-_WorldMercator-colton-1855.jpg"><img src="images/mercator.jpg"></a></div>
-<div>However, one must be mindful of Mercator's limitations, namely <em>area distortion moving towards the poles</em>.</div>
+<div>Be mindful of Mercator's limitations &rarr; <em>area distortion moving towards the poles</em>.</div>
 <div><img src="images/Tissot_mercator.png"></div>
 
 <div>A collection of tiles makes up the map's <em>base layer.</em></div>
@@ -297,13 +301,11 @@ window.onload = function() {
   <h2>Good intros to D3:</h2>
     <ul>
       <li>Kai Chang's <a href="http://exposedata.com/talk/d3-geo/">d3.geo presentation</a>
-      <li><a href="http://bost.ocks.org/mike/" target="_blank">Examples &amp; tutorials from D3 creator Mike Bostock<a></li>
+        <li><a href="http://bost.ocks.org/mike/" target="_blank">Examples &amp; tutorials from D3 creator Mike Bostock</a></li>
     </ul>
 </div>
 
-
-
-<div>So.<br>Where do I start?</div>
+<div>How to get going...</div>
 
 <div>Do I need to make my own custom tiles?</div>
 
@@ -327,12 +329,13 @@ window.onload = function() {
 
 <div>Finally, <a href="http://cartodb.com">CartoDB</a> takes care of almost all of this for you!</div>
 
+<div>What have we learned?</div>
+<div>Web maps are a particular type of digital map</div>
+<div>Most web maps consist of a tile base layer and a vector feature layer...</div>
+<div>...but there are exceptions</div>
+
 <div>Presentation made with <a href="http://www.macwright.org/big/">big</a></div>
 
-
-
-<!--Spare slide/slide groups -->
-<!--Anatomy metaphor-->
 
 
 </body>
