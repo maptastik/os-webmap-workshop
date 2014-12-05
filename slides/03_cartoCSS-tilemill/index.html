@@ -1,0 +1,207 @@
+<html>
+<head>
+  <title>03_cartoCSS-tilemill</title>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <link href='../big.css' rel='stylesheet' type='text/css' />
+  <style>
+    .carto-multi {
+  		background-image: url(./images/carto-multi.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:60%;
+  	}
+    .carto-ref1 {
+  		background-image: url(./images/carto-ref1.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .carto-ref2 {
+  		background-image: url(./images/carto-ref2.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .carto-ref3 {
+  		background-image: url(./images/carto-ref3.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .carto-ref4 {
+  		background-image: url(./images/carto-ref4.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .carto-ref5 {
+  		background-image: url(./images/carto-ref5.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .mb-studio1 {
+  		background-image: url(./images/mb-studio1.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+
+  	/*Text Style*/
+  	body {
+  		font-family: 'Open Sans', 'Helvetica', sans-serif;
+  		letter-spacing: -1px;
+
+  	}
+    a {
+        background-color: transparent;
+        color: #34d0e7;
+    }
+  	ul, ol {
+  		margin-left: 10%;
+  		line-height: 100%;
+
+	}
+
+	.black-text {
+		color: #000000;
+	}
+	.purple-text {
+		color: #8e44ad;
+	}
+	.center-text {
+		text-align: center;
+	}
+	.imageTextLight {
+  		text-shadow:0px 0px 7.5px rgba(34,34,34,0.95);
+	}
+    code {
+        font-family: "courier new";
+        font-size: 64;
+    }
+  </style>
+  <script src='../big.js'></script>
+</head>
+<body>
+	<div>Part 3: CartoCSS &amp; TileMill</div>
+   <div><a href="http://bit.ly/1z2Ya3a" target="_blank">http://bit.ly/1z2Ya3a</a></div>
+    <div>What are we doing</div>
+    <div>Making a <em>map</em>!</div>
+    <div><h2>What really?</h2>
+		<ol>
+			<li><em>Style</em> a map</li>
+			<li>Get, create, &amp; edit data <em>for the web</em></li>
+		</ol>
+	</div>
+	<div>Why?</div>
+	<div>We want maps that are <em>rich with information</em></div>
+	<div>We want maps that people can <em>interact</em> with</div>
+	<div>It's about time we actually <em>made a map</em>!</div>
+	<div>
+	    <h2>Goals:</h2>
+		<ul>
+		    <li>Basic understanding of <em>styling with cartoCSS</em></li>
+			<li>Be able to create <em>interactive map tiles in TileMill</em> </li>
+            <li>Add interactive <em>tile map on top of basemap</em> with mapbox.js</li>
+            <li>Create a map with <em>Leaflet and GeoJSON</em></li>
+		</ul>
+	</div>
+	<div>What is <em>CartoCSS</em>?</div>
+	<div>A <em>styling language</em> used in TileMill/Mapbox Studio</div>
+	<div>It may be helpful to look at <em>HTML/CSS</em> relationship</div>
+	<div>Use CSS to select HTML and element/tag/class/id and add style</div>
+	<div><a href="http://codepen.io/maptastik/pen/jEbdRm" target="_blank">example</a></div>
+	<div>CartoCSS is similar in <em>syntax</em> &amp; <em>function</em></div>
+	<div>
+	    <code>#layer {
+	        symbolizer: value;
+	    }
+	    </code></div>
+	<div>Allows you to <em>target</em> map features...</div>
+	<div>...and manipulate various aspects of their appearance</div>
+	<div>You can style...</div>
+	<div>points, lines, &amp; polygons</div>
+	<div>rasters</div>
+	<div>text</div>
+	<div>buildings</div>
+	<div>and more!</div>
+	<div>And there are lots of symbolizing options for different types of features<br>(<a href="https://github.com/mapbox/carto/blob/master/docs/latest.md" target="_blank">see Reference</a>)</div>
+	<div data-bodyclass="carto-ref1"></div>
+	<div data-bodyclass="carto-ref2"></div>
+	<div data-bodyclass="carto-ref3"></div>
+	<div data-bodyclass="carto-ref4"></div>
+	<div data-bodyclass="carto-ref5"></div>
+	<div>What is TileMill?</div>
+	<div>Map <em>design</em> program</div>
+	<div>Can handle a variety of geographic data formats</div>
+	<div>
+	    <h2>Vector</h2>
+	    <ul>
+	        <li>shp</li>
+	        <li>kml</li>
+	        <li>csv</li>
+	        <li>geoJSON</li>
+	        <li>PostGIS</li>
+	    </ul>
+    </div>
+    <div>Raster: GeoTIFF</div>
+    <div>
+        <h4>Exports to a variety of formats</h4>
+        <ul>
+            <li>png</li>
+            <li>svg</li>
+            <li>pdf</li>
+            <li>mapnik XML</li>
+            <li><em>mbtiles</em></li>
+        </ul>
+    </div>
+    <div><em>NOT</em> a GIS</div>
+    <div><strike>geoprocessing</strike></div>
+    <div><strike>spatial analysis</strike></div>
+    <div><strike>data management</strike></div>
+    <div>Best suited for <em>design</em></div>
+    <div>What does this look like?<br><span style="font-size: x-large;">Let's check out an example in TileMill</span></div>
+	<div>What about Mapbox Studio?</div>
+	<div data-bodyclass="mb-studio1"></div>
+	<div data-bodyclass="mb-studio1 imageTextLight">
+	    <ul>
+	        <li>vector tiles</li>
+	        <li>Style OSM data directly</li>
+	    </ul>
+	</div>
+	<div>Activity 1: Make an interactive choropleth map with TileMill</div>
+	
+	<div>Activity 2: Put our choropleth on top of a basemap</div>
+	<div>Data: <code>./data/prepared/<em>lucasCo_hungarian_tracts.geojson</em></code></div>
+	<div>Set up a simple server in python</div>
+	<div>
+	    <ol>
+	        <li>open command prompt
+	            <ul>
+	                <li>Windows: cmd</li>
+	                <li>Mac: Terminal</li>
+	            </ul>
+	        </li>
+	        <li>Change directory to where you're storing files <br><span style="font-size: x-large;">(If you're following along, this is where you downloaded the os-webmap-workshop repo to)</span></li>
+	        <li><code>python -m SimpleHTTPServer</code></li>
+	        <li>Browser: <code>127.00.1:8000</code></li>
+	    </ol>
+	</div>
+	<div>Steps:<br><code>.maps/steps/lucasCo_hungarian-steps.html</code></div>
+	<div>Activity 3: Remake the whole map using geoJSON &amp; Leaflet</div>
+    <div>Data:<br><code>./data/prepared/<em>lucasCo_hungarian_tracts.geojson</em></code></div>
+    
+    <div>What did we do?</div>
+    <div>
+        <ul>
+            <li>Learned about <em>CartoCSS &amp; TileMill</em></li>
+            <li>Used TileMill to make an <em>interactive choropleth</em> map and <em>export it to Mapbox</em></li>
+            <li>Added our interactive choropleth map <em>on top of a tile basemap with MapboxJS</em></li>
+            <li>Created a choropleth map <em>using GeoJSON data and Leaflet</em></li>
+        </ul>
+    </div>
+	
+	
+
+</body>
+</html>

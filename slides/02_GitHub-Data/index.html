@@ -1,0 +1,325 @@
+<html>
+<head>
+  <title>02_GitHub-Data</title>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <link href='../big.css' rel='stylesheet' type='text/css' />
+  <style>
+    .gdb {
+  		background-image: url(./images/gdb.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .shapefile {
+  		background-image: url(./images/shapefile.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .geojson-1 {
+  		background-image: url(./images/geojson-1.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .geojson-2 {
+  		background-image: url(./images/geojson-2.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .geojson-3 {
+  		background-image: url(./images/geojson-3.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .leaflet-logo {
+        background-color: #fff;
+  		background-image: url(./images/leaflet-logo.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:50%;
+  	}
+    .mapbox-logo {
+        background-color: #fff;
+  		background-image: url(./images/mapbox-logo.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:50%;
+  	}
+    .openlayers-logo {
+        background-color: #fff;
+  		background-image: url(./images/openlayers-logo.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:50%;
+  	} 
+  	
+  	.octocat {
+  		background-color: #fff;
+  		background-image: url(./images/octocat-original.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size: 50%;
+  	}
+  	.github-signup {
+  		background-color: #fff;
+  		background-image: url(./images/github-signup.jpg);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size: 100%;
+  	}
+    .fork {
+  		background-image: url(./images/repo-fork.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:75%;
+  	}
+    .clone {
+  		background-image: url(./images/repo-clone.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:75%;
+  	}
+    .gh-pages-1 {
+  		background-image: url(./images/gh-pages-1.PNG);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}  
+    .osm-1 {
+  		background-image: url(./images/osm-1.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+    .overpass-turbo {
+  		background-image: url(./images/overpass-turbo.png);
+    	background-repeat: no-repeat;
+    	background-position: center 1px;
+    	background-size:100%;
+  	}
+
+  	/*Text Style*/
+  	body {
+  		font-family: 'Open Sans', 'Helvetica', sans-serif;
+  		letter-spacing: -1px;
+
+  	}
+    a {
+        background-color: transparent;
+        color: #34d0e7;
+    }
+  	ul, ol {
+  		margin-left: 10%;
+  		line-height: 100%;
+
+	}
+
+	.black-text {
+		color: #000000;
+	}
+	.purple-text {
+		color: #8e44ad;
+	}
+	.center-text {
+		text-align: center;
+	}
+	.imageTextLight {
+  		text-shadow:0px 0px 7.5px rgba(34,34,34,0.95);
+	}
+  </style>
+  <script src='../big.js'></script>
+</head>
+<body>
+	<div>Part 2: Data &amp; GitHub</div>
+  <div>With help from <a href="https://github.com/lyzidiamond/learn-geojson">Lyzi Diamond</a> &amp; <a href="https://github.com/calvinmetcalf/maptime-git">Calvin Metcalf</a></div>
+   <div>Download slides: <a href="http://bit.ly/1FS0nyQ">http://bit.ly/1FS0nyQ</a></div>
+    <div><h2>2 interrelated aims:</h2>
+		<ol>
+			<li>Find a place to store &amp; access data</li>
+			<li>Get, create, &amp; edit data for the web</li>
+		</ol>
+	</div>
+	<div>Why?</div>
+	<div>We need to know where our data is so we can get to it when we need it</div>
+	<div>We need to be able to optimize our data for the web!</div>
+	<div><h2>Goals:</h2>
+		<ul>
+		    <li>Get to know GeoJSON</li>
+			<li>Understand the basics of GitHub</li>
+			<li>Be able to access and make changes to files on GitHub</li>
+			<li>Identify tools and sources to get &amp; prepare data for the web</li>
+		</ul>
+	</div>
+	
+<!--Intro to GeoJSON-->
+   <div>What data formats are we working with usually in GIS?</div>
+    <div data-bodyclass="gdb purple-text imageTextLight">geodatabase</div>
+	<div data-bodyclass="shapefile purple-text imageTextLight">shapefile</div>
+	<div>OK for GIS</div>
+	<div>Less good for web mapping</div>
+	<div>What's good for web?</div>
+	<div>CSV</div>
+	<div>KML</div>
+	<div>But the emerging standard for web-based mapping...</div>
+	<div>GeoJSON</div>
+<!--This section contains several slides from Lyzi Diamond: http://lyzidiamond.com/learn-geojson/-->
+	<div>What is <em>GeoJSON</em>?</div>
+    <div><em>GeoJSON:</em> geographic data format. (Contains spatial information.)</div>
+    <div><em>GeoJSON:</em> extension of JSON, with a specific structure.<br><small>(JSON==<em>J</em>ava<em>S</em>cript <em>O</em>bject <em>N</em>otation)</small></div>
+    <div>This is what it looks like:</div>
+    <div data-bodyclass="geojson-1"></div>
+    <div><em>GeoJSON:</em> has room for nested attribute information.</div>
+    <div data-bodyclass="geojson-2"></div>
+    <div data-bodyclass="geojson-3"></div>
+    <div><em>GeoJSON:</em> loved by web mapping libraries.</div>
+    <div>For example...</div>
+    <div data-bodyclass="leaflet-logo"></div>
+    <div data-bodyclass="mapbox-logo"></div>
+    <div data-bodyclass="openlayers-logo"></div>
+    <div>And it's pretty easy to edit <em>GeoJSON</em>in your browser with a tool called <a href="http://geojson.io/" target="_blank">geojson.io</a></div>
+    <div>(We'll come back to that.)</div>
+	
+	<div>We know about a data format (GeoJSON)...</div>
+	<div>Where are we going to <em>store</em> it so it's also <em>accessible</em> for webmaps?</div>
+	<div>We'll use <a href="https://github.com/" target="_blank">GitHub</a>!</div>
+	<div>But first...</div>
+	<div>What is git?</div>
+	
+	<div><em>git:</em> distributed version control system.</div>
+    <div>No central source</div>
+    <div><em>git:</em> allows for collaboration without totally screwing everything up.</div>
+    <div><em>git:</em> super powerful.</div>
+    <div data-bodyclass="octocat purple-text imageTextLight">What is <em>GitHub?</em></div>
+    <div><em>GitHub:</em> a home for lots and lots of code repositories.</div>
+    <div><em>GitHub:</em> helps you interact with <em>git</em>and <em>beyond</em>!</div>
+    <div><em>GitHub:</em> provides easy-to-use tools and tutorials for using and learning git to collaborate on and contribute to projects.</div>
+    <div class="center-text">git version control<br /><em>+</em><br />storage<br /><em>+</em><br />social</div>
+    <div>Why GitHub?</div>
+	<div><h2>Why GitHub?</h2>
+		<ul>
+			<li>Free</li>
+			<li>Backed-up</li>
+			<li>Permalinks</li>
+			<li>Collaboration</li>
+		</ul>
+	</div>
+    <div>And since we <em>looove</em> maps...</div>    
+    <div><em>GitHub:</em> best friends with <em>GeoJSON</em>!</div>
+	<div>Support for geo (especially GeoJSON)</div>
+	<div><h2>Support for geo</h2>
+		<ul>
+			<li>Store &amp; access data
+				<ul>	
+			<li>Versioning without SDE!</li>
+			<li><a href="http://vimeo.com/106228441">"Small Town GIS Leveraging Github"</a> - Aaron Racicot at FOSS4G2014</li>
+				</ul>
+			</li>
+			<li>GeoJSON rendered as a map</li>
+		</ul>
+	</div>
+	<div>Limitations</div>
+	<div><h2>Limitations</h2>
+		<ul>
+			<li>Limiting access (private repositories) == $</li>
+			<li>100mb size limitation</li>
+			<li>Visualization support for JSON, GeoJSON, &amp; TopoJSON only</li>
+		</ul>
+	</div>
+	<div>Let's get started with GitHub!</div>
+	<div data-bodyclass="github-signup imageTextLight">Create GitHub account</div>
+	<div>You're ready to get going!</div>
+	<div>Interact with Github by 3 means:
+	    <ul>
+	        <li>browser</li>
+	        <li><em>GitHub app (aka CodeBeGone)</em>
+	            <ul>
+	                <li><a href="https://windows.github.com/" target="_blank">Windows</a></li>
+	                <li><a href="https://mac.github.com/" target="_blank">Mac</a></li>
+	            </ul>
+	        </li>
+	        <li>command line</li>
+	    </ul>
+	</div>
+	<div>Lingo</div>
+	<div>Basic unit: <em>repository</em></div>
+	<div>aka: <em>repo</em></div>
+	<div>Place for your code, data, documents...<em>digital stuff</em> in general</div>
+	<div class="center-text">Repos accessible from your own computer<br /><em>OR</em><br />another computer/server</div>
+	<div>Made a change to something in your repo?</div>
+	<div>
+	    <ol>
+	        <li>save</li>
+	        <li><em>commit</em> + message</li>
+	        <li><em>sync</em> to server</li>
+	    </ol>
+	</div>
+	<div>We can work with our own stuff...or other people's stuff!</div>
+	<div>How?</div>
+	<div class="center-text">fork<br /><em>&amp;</em><br />clone</div>
+	<div><a href="https://github.com/maptastik/os-webmap-workshop" target="_blank">Fork this repo</a></div>
+	
+	
+	<div>Note the <em>branch</em></div>
+	<div data-bodyclass="gh-pages-1"></div>
+	<div>New repos start with a <em>Master</em> branch</div>
+	<div>But we want to be able to use GitHub to show our maps and data within a webpage</div>
+	<div>So we're working with the gh-pages</div>
+	<div data-bodyclass="fork"></div>
+	<div>Clone repo</div>
+	<div data-bodyclass="clone"></div>
+	<div>Let's look at some data<br /><br /><a href="https://github.com/maptastik/os-webmap-workshop/blob/gh-pages/data/prepared/toledo_poi.geojson" target="_blank">Toledo POIs</a></div>
+	<div>If you fork &amp; cloned: ./data/prepared/toledo_poi.geojson</div>
+	<div>Otherwise: <a href="http://bit.ly/1FRWv0L">http://bit.ly/1FRWv0L</a></div>
+	<div>We can edit the POIs...</div>
+	<div>...or make new GeoJSON!</div>
+	<div>How?</div>
+	<div><a href="http://geojson.io/" target="_blank">geojson.io</a></div>
+	<div>If you use Chrome, <a href="https://chrome.google.com/webstore/detail/geojsonio/oibjgofbhldcajfamjganpeacipebckp" target="_blank">there's an extension</a> for opening your GeoJSON from within GitHub</div>
+	
+	<div>But you probably have tons of non-GeoJSON data...</div>
+	<div>What to do?</div>
+	<div><h4>Tools for GeoJSONifying your data:</h4>
+	    <ul>
+	        <li><a href="http://ogre.adc4gis.com/" target="_blank">Ogre</a> (web)</li>
+	        <li><a href="http://www.shpescape.com/mix/" target="_blank">Shapescape</a> (web)</li>
+	        <li><a href="https://gdbflee-mweisman.rhcloud.com/" target="_blank">GDB Flee</a> (web)</li>
+	        <li><a href="https://www.qgis.org/en/site/forusers/download.html" target="_blank">QGIS</a> (desktop)</li>
+	        <li><a href="https://github.com/project-open-data/esri2open" target="_blank">esri2open</a> (ArcGIS Toolbox)</li>
+	    </ul>
+	</div>
+	<div>What if you don't have any data?</div>
+	<div>That's OK!</div>
+	<div>Lots of options</div>
+	<div>Public data from data portals/sites</div>
+	<div>
+        <h2>For instance:</h2>
+	    <ul>
+	    <li><a href="http://www.data.gov/" target="_blank">data.gov</a></li>
+	    <li><a href="http://geohio.maps.arcgis.com/home/" target="_blank">OGRIP</a></li>
+	    <li><a href="http://co.lucas.oh.us/index.aspx?NID=1316" target="_blank">Lucas County GIS</a></li>
+	    </ul>
+	</div>
+	<div>Collect your own!</div>
+	<div>
+	    <h2>For instance</h2>
+        <ul>
+            <li><a href="http://fulcrumapp.com/" target="_blank">Fulcrum</a></li>
+            <li><a href="http://www.epicollect.net/" target="_blank">EpiCollect</a></li>
+            <li><a href="https://import.io/" target="_blank">import.io</a></li>
+        </ul>
+    </div>
+    <div>Go to the crowd</div>
+    <div data-bodyclass="osm-1"></div>
+    <div>Easy access to OSM data set via <a href="http://overpass-turbo.eu/" target="_blank">Overpass Turbo</a></div>
+    <div data-bodyclass="overpass-turbo"></div>
+    <div>What have we learned?</div>
+    <div>GeoJSON is an important data format for webmapping</div>
+    <div>We can use GitHub to store and access our data</div>
+    <div>We can get data from public sources, OSM, or from our own collecting!</div>
+
+
+</body>
+</html>
