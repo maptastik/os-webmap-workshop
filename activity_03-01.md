@@ -56,7 +56,14 @@ This will open up a little *Layers* window. Since we haven't added anything to o
 
 You should see the *Add Layer* window. Fill in the `ID` field with a short name for the layer. It can be whatever you want, but it's helpful to name your layer something that describes what it is. (I opted for `tracts`). 
 
-Select the `lucasCo_hungarian_tracts.geojson` dataset wherever you have it saved. Leave everything else as it is and click **Save &amp; Style**
+Select the `lucasCo_hungarian_tracts.geojson` dataset wherever you have it saved.
+
+<strong>OR</strong>
+
+Get it directly from a (in this case, *my*) GitHub repo:
+<code>https://raw.githubusercontent.com/maptastik/os-webmap-workshop/gh-pages/data/prepared/lucasCo_hungarian_tracts.geojson</code>
+
+Leave everything else as it is and click **Save &amp; Style**
 
 <img src="https://maptastik.github.com/os-webmap-workshop/images/tm-map4.PNG" width=100% />
 
