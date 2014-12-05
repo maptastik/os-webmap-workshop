@@ -201,7 +201,7 @@
       "type": "Feature",
       "properties": {
         "name": "Inverness Club",
-        "type": "Sports Venue"
+        "type": "Golf Course"
       },
       "geometry": {
         "type": "Point",
@@ -234,8 +234,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.53222846984863,
-          41.656352906693606
+          -83.53221774101257,
+          41.65628477071447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sylvania Golf Club",
+        "type": "Golf Course"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.68208885192871,
+          41.705151803808796
         ]
       }
     }
