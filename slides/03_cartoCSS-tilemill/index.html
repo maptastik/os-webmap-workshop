@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>02_GitHub-Data</title>
+  <title>03_cartoCSS-tilemill</title>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <link href='../big.css' rel='stylesheet' type='text/css' />
   <style>
@@ -84,7 +84,9 @@
 </head>
 <body>
 	<div>Part 3: CartoCSS &amp; TileMill</div>
-    <div><h2>What?</h2>
+    <div>What are we doing</div>
+    <div>Making a map!</div>
+    <div><h2>What really?</h2>
 		<ol>
 			<li>Style a map</li>
 			<li>Get, create, &amp; edit data for the web</li>
@@ -100,6 +102,7 @@
 		    <li>Basic understanding of styling with cartoCSS</li>
 			<li>Be able to create interactive map tiles in TileMill </li>
             <li>Add interactive tile map on top of basemap with mapbox.js</li>
+            <li>Create a map with Leaflet and GeoJSON</li>
 		</ul>
 	</div>
 	<div>What is CartoCSS?</div>
@@ -127,12 +130,8 @@
 	<div data-bodyclass="carto-ref3"></div>
 	<div data-bodyclass="carto-ref4"></div>
 	<div data-bodyclass="carto-ref5"></div>
-	<div>Read on a painter's model</div>
-	<div class="center-text"><p><em>top</em><br>&darr;<br><em>bottom</em></p></div>
-	<div>You can stack styles for the same layer</div>
-	<div data-bodyclass="carto-multi"></div>
 	<div>What is TileMill?</div>
-	<div>Map design program</div>
+	<div>Map <em>design</em> program</div>
 	<div>Can handle a variety of geographic data formats</div>
 	<div>
 	    <h2>Vector</h2>
@@ -170,8 +169,38 @@
 	    </ul>
 	</div>
 	<div>Activity 1: Make an interactive choropleth map with TileMill</div>
+	
 	<div>Activity 2: Put our choropleth on top of a basemap</div>
+	<div>Data: <code>./data/prepared/<em>lucasCo_hungarian_tracts.geojson</em></code></div>
+	<div>Set up a simple server in python</div>
+	<div>
+	    <ol>
+	        <li>open command prompt
+	            <ul>
+	                <li>Windows: cmd</li>
+	                <li>Mac: Terminal</li>
+	            </ul>
+	        </li>
+	        <li>Change directory to where you're storing files <br><span style="font-size: x-large;">(If you're following along, this is where you downloaded the os-webmap-workshop repo to)</span></li>
+	        <li><code>python -m SimpleHTTPServer</code></li>
+	        <li>Browser: <code>127.00.1:8000</code></li>
+	    </ol>
+	</div>
+	<div>Steps:<br><code>.maps/steps/lucasCo_hungarian-steps.html</code></div>
 	<div>Activity 3: Remake the whole map using geoJSON &amp; Leaflet</div>
+    <div>Data:<br><code>./data/prepared/<em>lucasCo_hungarian_tracts.geojson</em></code></div>
+    
+    <div>What did we do?</div>
+    <div>
+        <ul>
+            <li>Learned about <em>CartoCSS &amp; TileMill</em></li>
+            <li>Used TileMill to make an <em>interactive choropleth</em> map and <em>export it to Mapbox</em></li>
+            <li>Added our interactive choropleth map <em>on top of a tile basemap with MapboxJS</em></li>
+            <li>Created a choropleth map <em>using GeoJSON data and Leaflet</em></li>
+        </ul>
+    </div>
+	
+	
 
 </body>
 </html>
