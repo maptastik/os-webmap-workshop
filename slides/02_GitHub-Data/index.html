@@ -145,14 +145,14 @@
 	<div>We need to be able to optimize our data for the web!</div>
 	<div><h2>Goals:</h2>
 		<ul>
-		    <li>Get to know geoJSON</li>
+		    <li>Get to know GeoJSON</li>
 			<li>Understand the basics of GitHub</li>
 			<li>Be able to access and make changes to files on GitHub</li>
 			<li>Identify tools and sources to get &amp; prepare data for the web</li>
 		</ul>
 	</div>
 	
-<!--Intro to geoJSON-->
+<!--Intro to GeoJSON-->
    <div>What data formats are we working with usually in GIS?</div>
     <div data-bodyclass="gdb purple-text imageTextLight">geodatabase</div>
 	<div data-bodyclass="shapefile purple-text imageTextLight">shapefile</div>
@@ -162,7 +162,7 @@
 	<div>CSV</div>
 	<div>KML</div>
 	<div>But the emerging standard for web-based mapping...</div>
-	<div>geoJSON</div>
+	<div>GeoJSON</div>
 <!--This section contains several slides from Lyzi Diamond: http://lyzidiamond.com/learn-geojson/-->
 	<div>What is <em>GeoJSON</em>?</div>
     <div><em>GeoJSON:</em> geographic data format. (Contains spatial information.)</div>
@@ -180,7 +180,7 @@
     <div>And it's pretty easy to edit <em>GeoJSON</em>in your browser with a tool called <a href="http://geojson.io/" target="_blank">geojson.io</a></div>
     <div>(We'll come back to that.)</div>
 	
-	<div>We know about a data format (geoJSON)...</div>
+	<div>We know about a data format (GeoJSON)...</div>
 	<div>Where are we going to <em>store</em> it so it's also <em>accessible</em> for webmaps?</div>
 	<div>We'll use <a href="https://github.com/" target="_blank">GitHub</a>!</div>
 	<div>But first...</div>
@@ -206,7 +206,7 @@
 	</div>
     <div>And since we <em>looove</em> maps...</div>    
     <div><em>GitHub:</em> best friends with <em>GeoJSON</em>!</div>
-	<div>Support for geo (especially geoJSON)</div>
+	<div>Support for geo (especially GeoJSON)</div>
 	<div><h2>Support for geo</h2>
 		<ul>
 			<li>Store &amp; access data
@@ -215,7 +215,7 @@
 			<li><a href="http://vimeo.com/106228441">"Small Town GIS Leveraging Github"</a> - Aaron Racicot at FOSS4G2014</li>
 				</ul>
 			</li>
-			<li>geoJSON rendered as a map</li>
+			<li>GeoJSON rendered as a map</li>
 		</ul>
 	</div>
 	<div>Limitations</div>
@@ -223,7 +223,7 @@
 		<ul>
 			<li>Limiting access (private repositories) == $</li>
 			<li>100mb size limitation</li>
-			<li>Visualization support for json, geojson, &amp; topojson only</li>
+			<li>Visualization support for JSON, GeoJSON, &amp; TopoJSON only</li>
 		</ul>
 	</div>
 	<div>Let's get started with GitHub!</div>
@@ -242,40 +242,44 @@
 	    </ul>
 	</div>
 	<div>Lingo</div>
-	<div>Basic unit: repository</div>
+	<div>Basic unit: <em>repository</em></div>
 	<div>aka: <em>repo</em></div>
-	<div>Place for your code, data, documents...digital stuff in general</div>
+	<div>Place for your code, data, documents...<em>digital stuff</em> in general</div>
 	<div class="center-text">Repos accessible from your own computer<br /><em>OR</em><br />another computer/server</div>
 	<div>Made a change to something in your repo?</div>
 	<div>
 	    <ol>
 	        <li>save</li>
-	        <li>commit + message</li>
-	        <li>sync/push to server</li>
+	        <li><em>commit</em> + message</li>
+	        <li><em>sync</em> to server</li>
 	    </ol>
 	</div>
 	<div>We can work with our own stuff...or other people's stuff!</div>
 	<div>How?</div>
-	<div class="center-text">fork<br />&amp;<br />clone</div>
+	<div class="center-text">fork<br /><em>&amp;</em><br />clone</div>
 	<div><a href="https://github.com/maptastik/os-webmap-workshop" target="_blank">Fork this repo</a></div>
-	<div data-bodyclass="fork"></div>
-	<div>Clone repo</div>
-	<div data-bodyclass="clone"></div>
+	
+	
 	<div>Note the <em>branch</em></div>
 	<div data-bodyclass="gh-pages-1"></div>
 	<div>New repos start with a <em>Master</em> branch</div>
 	<div>But we want to be able to use GitHub to show our maps and data within a webpage</div>
 	<div>So we're working with the gh-pages</div>
+	<div data-bodyclass="fork"></div>
+	<div>Clone repo</div>
+	<div data-bodyclass="clone"></div>
 	<div>Let's look at some data<br /><br /><a href="https://github.com/maptastik/os-webmap-workshop/blob/gh-pages/data/prepared/toledo_poi.geojson" target="_blank">Toledo POIs</a></div>
+	<div>If you fork &amp; cloned: ./data/prepared/toledo_poi.geojson</div>
+	<div>Otherwise: <a href="http://bit.ly/1FRWv0L">http://bit.ly/1FRWv0L</a></div>
 	<div>We can edit the POIs...</div>
-	<div>...or make new geoJSON!</div>
+	<div>...or make new GeoJSON!</div>
 	<div>How?</div>
 	<div><a href="http://geojson.io/" target="_blank">geojson.io</a></div>
-	<div>If you use Chrome, <a href="https://chrome.google.com/webstore/detail/geojsonio/oibjgofbhldcajfamjganpeacipebckp" target="_blank">there's an extension</a> for opening your geoJSON from within GitHub</div>
+	<div>If you use Chrome, <a href="https://chrome.google.com/webstore/detail/geojsonio/oibjgofbhldcajfamjganpeacipebckp" target="_blank">there's an extension</a> for opening your GeoJSON from within GitHub</div>
 	
-	<div>But you probably have tons on non-geoJSON data...</div>
+	<div>But you probably have tons of non-GeoJSON data...</div>
 	<div>What to do?</div>
-	<div><h4>Tools for geoJSONifying your data:</h4>
+	<div><h4>Tools for GeoJSONifying your data:</h4>
 	    <ul>
 	        <li><a href="http://ogre.adc4gis.com/" target="_blank">Ogre</a> (web)</li>
 	        <li><a href="http://www.shpescape.com/mix/" target="_blank">Shapescape</a> (web)</li>
@@ -309,6 +313,9 @@
     <div data-bodyclass="osm-1"></div>
     <div>Easy access to OSM data set via <a href="http://overpass-turbo.eu/" target="_blank">Overpass Turbo</a></div>
     <div data-bodyclass="overpass-turbo"></div>
+    <div>What have we learned?</div>
+    <div>GeoJSON is an important data format for webmapping</div>
+    <div>We can use GitHub to store and access our data</div>
 
 </body>
 </html>
